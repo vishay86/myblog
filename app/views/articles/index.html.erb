@@ -1,5 +1,9 @@
 <h1 class = 'text-center'>All Articles</h1>
 
+<p>
+<%= link_to 'New Article', new_article_path, class: 'btn btn-warning' %>
+</p>
+
 <% @articles.each do |article| %>
 
   <div class="panel panel-primary">
@@ -12,7 +16,7 @@
     </div>
 
     <div class="panel-footer">
-    Created: <%= time_ago_in_words(article.created_at) %> ago
+    Created: <%= time_ago_in_words(article.created_at) %> ago by <%= article.user.email %>
     <p class = 'pull-right'>
     <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-success btn-sm' %>
 
@@ -23,3 +27,7 @@
   </div>
 
 <% end %>
+
+<div class = 'text-center'>
+  <%= will_paginate @articles %>
+</div>

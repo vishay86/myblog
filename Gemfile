@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 gem 'devise'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
