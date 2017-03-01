@@ -16,7 +16,13 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <% if current_user %>
+          <li><%= link_to 'Articles', '#' %></li>
+
+        <% else %>
+        <li><%= link_to 'Log In', new_user_session_path %></li>
+
+        <% end %>
         
       </ul>
     </div><!-- /.navbar-collapse -->
